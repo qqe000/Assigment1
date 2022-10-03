@@ -3,7 +3,7 @@ Inside thesrc folder there are two files both named QuickSort and both implement
 
 How to use:
 
-QuickSort.asm: using an asembly compiler the file can be executed and it would return the sorted array with the execution time of the hotspot
+asm.s: using an asembly compiler the file can be executed and it would return the sorted array with the execution time of the hotspot
 
 QuickSort.c: the file can be executed using this command in terminal: gcc QuickSort.c and it would return the sorted array with the execution time of the hotspot
 
