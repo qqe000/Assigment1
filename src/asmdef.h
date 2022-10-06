@@ -1,19 +1,12 @@
-/** @file asmdef.h
- *  @brief Small macro hacks that can be used in assembly code to allow it to be
- *  compiled from both Linux and Cygwin.
- *
- *  @author Erlend Graff <erlend.h.graff@uit.no>
- */
+#include <stdio.h>
 
-#ifdef __CYGWIN__
-#define FUNC(x) _##x
-#define DECLARE_GLOBAL(x) .globl FUNC(x);\
-	.def	FUNC(x);\
-	.scl	2;\
-	.type	32;\
-	.endef
-#else
-#define FUNC(x) x
-#define DECLARE_GLOBAL(x) .globl FUNC(x);\
-	.type FUNC(x), @function
-#endif
+extern int datasetsort(int dataset[],int length);
+int main () {
+    int dataset[] = {9, 4, 3, 1, 0, 7, 5};
+    int length = 6;
+    printf("Unsorted dataset: %d,%d,%d,%d,%d,%d,%d\n",dataset[0],dataset[1],dataset[2],dataset[3],dataset[4],dataset[5],dataset[6]);
+    datasetsort(dataset,length);
+    printf("Sorted dataset: %d,%d,%d,%d,%d,%d,%d\n",dataset[0],dataset[1],dataset[2],dataset[3],dataset[4],dataset[5],dataset[6]);
+
+    return 0;
+}
